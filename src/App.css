@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    "Trebuchet MS", "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #fde68a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.celebrate-yes {
+  animation: yes-bounce 1.2s ease-in-out infinite;
+}
+
+.confetti-layer,
+.balloon-layer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -12%;
+  width: 0.9rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  opacity: 0.9;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -18%;
+  width: 4rem;
+  height: 5rem;
+  border-radius: 999px 999px 999px 999px / 999px 999px 820px 820px;
+  opacity: 0.9;
+  box-shadow: inset -10px -12px 0 rgba(255, 255, 255, 0.18);
+  animation-name: balloon-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.8rem;
+  width: 0.15rem;
+  height: 5rem;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.35rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  transform: translateX(-50%) rotate(45deg);
+  background: inherit;
+}
+
+@keyframes yes-bounce {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.06) rotate(-2deg);
+  }
+  40% {
+    transform: scale(1.12) rotate(2deg);
+  }
+  60% {
+    transform: scale(1.08) rotate(-1deg);
+  }
+  80% {
+    transform: scale(1.04) rotate(1deg);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-2rem, 120vh, 0) rotate(540deg);
+  }
+}
+
+@keyframes balloon-float {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-4deg);
+  }
+  50% {
+    transform: translate3d(1.2rem, -62vh, 0) rotate(4deg);
+  }
+  100% {
+    transform: translate3d(-0.6rem, -124vh, 0) rotate(-3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celebrate-yes,
+  .confetti-piece,
+  .balloon {
+    animation: none;
+  }
+}

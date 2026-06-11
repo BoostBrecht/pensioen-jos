@@ -103,9 +103,9 @@ function App() {
             One simple answer
           </p> */}
 
-          <h1 className="mt-6 text-4xl font-black tracking-tight text-balance sm:text-6xl">
+          {/* <h1 className="mt-6 text-4xl font-black tracking-tight text-balance sm:text-6xl">
             Is Jos al met pensioen?
-          </h1>
+          </h1> */}
 
           <div
             className={`mt-8 text-[clamp(5rem,18vw,10rem)] font-black uppercase leading-none tracking-tight drop-shadow-[0_10px_25px_rgba(225,29,72,0.28)] ${
@@ -115,11 +115,11 @@ function App() {
             {isComplete ? "JA" : "NEE"}
           </div>
 
-          <p className="mt-4 text-sm font-medium uppercase tracking-[0.3em] text-slate-500">
+          {/* <p className="mt-4 text-sm font-medium uppercase tracking-[0.3em] text-slate-500">
             {isComplete
               ? "Jawel. Tijd voor taart, slingers en pensioen."
               : "Jos telt af naar 17:00 op 30 juni 2027."}
-          </p>
+          </p> */}
 
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {countdownItems.map((item) => (
